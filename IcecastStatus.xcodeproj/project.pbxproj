@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3941831155B4351007D68BB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B448201544E7FA00958377 /* SystemConfiguration.framework */; };
+		D3941847155B49D6007D68BB /* sample_icecast_status_output.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3941846155B49D6007D68BB /* sample_icecast_status_output.txt */; };
+		D3B448211544E7FA00958377 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B448201544E7FA00958377 /* SystemConfiguration.framework */; };
+		D3B4482915463F3600958377 /* IcecastStatusParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4482815463F3600958377 /* IcecastStatusParser.m */; };
+		D3B4482A15463F3600958377 /* IcecastStatusParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4482815463F3600958377 /* IcecastStatusParser.m */; };
+		D3C51E75153F8F94001F5B3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C51E74153F8F94001F5B3B /* UIKit.framework */; };
+		D3C51E77153F8F94001F5B3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C51E76153F8F94001F5B3B /* Foundation.framework */; };
+		D3C51E79153F8F94001F5B3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C51E78153F8F94001F5B3B /* CoreGraphics.framework */; };
+		D3C51E7F153F8F94001F5B3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3C51E7D153F8F94001F5B3B /* InfoPlist.strings */; };
+		D3C51E81153F8F94001F5B3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51E80153F8F94001F5B3B /* main.m */; };
+		D3C51E85153F8F94001F5B3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51E84153F8F94001F5B3B /* AppDelegate.m */; };
+		D3C51E88153F8F94001F5B3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51E87153F8F94001F5B3B /* ViewController.m */; };
+		D3C51E8B153F8F94001F5B3B /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C51E89153F8F94001F5B3B /* ViewController.xib */; };
+		D3C51E93153F8F94001F5B3B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C51E92153F8F94001F5B3B /* SenTestingKit.framework */; };
+		D3C51E94153F8F94001F5B3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C51E74153F8F94001F5B3B /* UIKit.framework */; };
+		D3C51E95153F8F94001F5B3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C51E76153F8F94001F5B3B /* Foundation.framework */; };
+		D3C51E9D153F8F94001F5B3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3C51E9B153F8F94001F5B3B /* InfoPlist.strings */; };
+		D3C51EA0153F8F94001F5B3B /* IcecastStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51E9F153F8F94001F5B3B /* IcecastStatusTests.m */; };
+		D3C51EB8153F90B5001F5B3B /* IcecastServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB3153F90B5001F5B3B /* IcecastServer.m */; };
+		D3C51EB9153F90B5001F5B3B /* IcecastServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB3153F90B5001F5B3B /* IcecastServer.m */; };
+		D3C51EBA153F90B5001F5B3B /* IcecastStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB5153F90B5001F5B3B /* IcecastStream.m */; };
+		D3C51EBB153F90B5001F5B3B /* IcecastStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB5153F90B5001F5B3B /* IcecastStream.m */; };
+		D3C51EBC153F90B5001F5B3B /* NetworkingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */; };
+		D3C51EBD153F90B5001F5B3B /* NetworkingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3C51E96153F8F94001F5B3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3C51E67153F8F93001F5B3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3C51E6F153F8F94001F5B3B;
+			remoteInfo = "IcecastStatus";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D3941846155B49D6007D68BB /* sample_icecast_status_output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_icecast_status_output.txt; sourceTree = "<group>"; };
+		D3B448201544E7FA00958377 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D3B4482715463F3600958377 /* IcecastStatusParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastStatusParser.h; sourceTree = "<group>"; };
+		D3B4482815463F3600958377 /* IcecastStatusParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastStatusParser.m; sourceTree = "<group>"; };
+		D3C51E70153F8F94001F5B3B /* IcecastStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IcecastStatus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C51E74153F8F94001F5B3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D3C51E76153F8F94001F5B3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D3C51E78153F8F94001F5B3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D3C51E7C153F8F94001F5B3B /* IcecastStatus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IcecastStatus-Info.plist"; sourceTree = "<group>"; };
+		D3C51E7E153F8F94001F5B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3C51E80153F8F94001F5B3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D3C51E82153F8F94001F5B3B /* IcecastStatus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IcecastStatus-Prefix.pch"; sourceTree = "<group>"; };
+		D3C51E83153F8F94001F5B3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D3C51E84153F8F94001F5B3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D3C51E86153F8F94001F5B3B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D3C51E87153F8F94001F5B3B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D3C51E8A153F8F94001F5B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		D3C51E91153F8F94001F5B3B /* IcecastStatusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IcecastStatusTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C51E92153F8F94001F5B3B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D3C51E9A153F8F94001F5B3B /* IcecastStatusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IcecastStatusTests-Info.plist"; sourceTree = "<group>"; };
+		D3C51E9C153F8F94001F5B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3C51E9E153F8F94001F5B3B /* IcecastStatusTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IcecastStatusTests.h; sourceTree = "<group>"; };
+		D3C51E9F153F8F94001F5B3B /* IcecastStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IcecastStatusTests.m; sourceTree = "<group>"; };
+		D3C51EB2153F90B5001F5B3B /* IcecastServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastServer.h; sourceTree = "<group>"; };
+		D3C51EB3153F90B5001F5B3B /* IcecastServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastServer.m; sourceTree = "<group>"; };
+		D3C51EB4153F90B5001F5B3B /* IcecastStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastStream.h; sourceTree = "<group>"; };
+		D3C51EB5153F90B5001F5B3B /* IcecastStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastStream.m; sourceTree = "<group>"; };
+		D3C51EB6153F90B5001F5B3B /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
+		D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingUtils.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3C51E6D153F8F94001F5B3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3B448211544E7FA00958377 /* SystemConfiguration.framework in Frameworks */,
+				D3C51E75153F8F94001F5B3B /* UIKit.framework in Frameworks */,
+				D3C51E77153F8F94001F5B3B /* Foundation.framework in Frameworks */,
+				D3C51E79153F8F94001F5B3B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3C51E8D153F8F94001F5B3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3941831155B4351007D68BB /* SystemConfiguration.framework in Frameworks */,
+				D3C51E93153F8F94001F5B3B /* SenTestingKit.framework in Frameworks */,
+				D3C51E94153F8F94001F5B3B /* UIKit.framework in Frameworks */,
+				D3C51E95153F8F94001F5B3B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3C51E65153F8F93001F5B3B = {
+			isa = PBXGroup;
+			children = (
+				D3C51E7A153F8F94001F5B3B /* IcecastStatus */,
+				D3C51E98153F8F94001F5B3B /* IcecastStatusTests */,
+				D3C51E73153F8F94001F5B3B /* Frameworks */,
+				D3C51E71153F8F94001F5B3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3C51E71153F8F94001F5B3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3C51E70153F8F94001F5B3B /* IcecastStatus.app */,
+				D3C51E91153F8F94001F5B3B /* IcecastStatusTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3C51E73153F8F94001F5B3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3B448201544E7FA00958377 /* SystemConfiguration.framework */,
+				D3C51E74153F8F94001F5B3B /* UIKit.framework */,
+				D3C51E76153F8F94001F5B3B /* Foundation.framework */,
+				D3C51E78153F8F94001F5B3B /* CoreGraphics.framework */,
+				D3C51E92153F8F94001F5B3B /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3C51E7A153F8F94001F5B3B /* IcecastStatus */ = {
+			isa = PBXGroup;
+			children = (
+				D3C51EB2153F90B5001F5B3B /* IcecastServer.h */,
+				D3C51EB3153F90B5001F5B3B /* IcecastServer.m */,
+				D3C51EB4153F90B5001F5B3B /* IcecastStream.h */,
+				D3C51EB5153F90B5001F5B3B /* IcecastStream.m */,
+				D3C51EB6153F90B5001F5B3B /* NetworkingUtils.h */,
+				D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */,
+				D3C51E83153F8F94001F5B3B /* AppDelegate.h */,
+				D3C51E84153F8F94001F5B3B /* AppDelegate.m */,
+				D3C51E86153F8F94001F5B3B /* ViewController.h */,
+				D3C51E87153F8F94001F5B3B /* ViewController.m */,
+				D3C51E89153F8F94001F5B3B /* ViewController.xib */,
+				D3B4482715463F3600958377 /* IcecastStatusParser.h */,
+				D3B4482815463F3600958377 /* IcecastStatusParser.m */,
+				D3C51E7B153F8F94001F5B3B /* Supporting Files */,
+			);
+			path = "IcecastStatus";
+			sourceTree = "<group>";
+		};
+		D3C51E7B153F8F94001F5B3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3C51E7C153F8F94001F5B3B /* IcecastStatus-Info.plist */,
+				D3C51E7D153F8F94001F5B3B /* InfoPlist.strings */,
+				D3C51E80153F8F94001F5B3B /* main.m */,
+				D3C51E82153F8F94001F5B3B /* IcecastStatus-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3C51E98153F8F94001F5B3B /* IcecastStatusTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3C51E9E153F8F94001F5B3B /* IcecastStatusTests.h */,
+				D3C51E9F153F8F94001F5B3B /* IcecastStatusTests.m */,
+				D3C51E99153F8F94001F5B3B /* Supporting Files */,
+				D3941846155B49D6007D68BB /* sample_icecast_status_output.txt */,
+			);
+			path = "IcecastStatusTests";
+			sourceTree = "<group>";
+		};
+		D3C51E99153F8F94001F5B3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3C51E9A153F8F94001F5B3B /* IcecastStatusTests-Info.plist */,
+				D3C51E9B153F8F94001F5B3B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3C51E6F153F8F94001F5B3B /* IcecastStatus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3C51EA3153F8F94001F5B3B /* Build configuration list for PBXNativeTarget "IcecastStatus" */;
+			buildPhases = (
+				D3C51E6C153F8F94001F5B3B /* Sources */,
+				D3C51E6D153F8F94001F5B3B /* Frameworks */,
+				D3C51E6E153F8F94001F5B3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IcecastStatus";
+			productName = "IcecastStatus";
+			productReference = D3C51E70153F8F94001F5B3B /* IcecastStatus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3C51E90153F8F94001F5B3B /* IcecastStatusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3C51EA6153F8F94001F5B3B /* Build configuration list for PBXNativeTarget "IcecastStatusTests" */;
+			buildPhases = (
+				D3C51E8C153F8F94001F5B3B /* Sources */,
+				D3C51E8D153F8F94001F5B3B /* Frameworks */,
+				D3C51E8E153F8F94001F5B3B /* Resources */,
+				D3C51E8F153F8F94001F5B3B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3C51E97153F8F94001F5B3B /* PBXTargetDependency */,
+			);
+			name = "IcecastStatusTests";
+			productName = "IcecastStatusTests";
+			productReference = D3C51E91153F8F94001F5B3B /* IcecastStatusTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3C51E67153F8F93001F5B3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Example Company Inc.";
+			};
+			buildConfigurationList = D3C51E6A153F8F93001F5B3B /* Build configuration list for PBXProject "IcecastStatus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D3C51E65153F8F93001F5B3B;
+			productRefGroup = D3C51E71153F8F94001F5B3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3C51E6F153F8F94001F5B3B /* IcecastStatus */,
+				D3C51E90153F8F94001F5B3B /* IcecastStatusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3C51E6E153F8F94001F5B3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3C51E7F153F8F94001F5B3B /* InfoPlist.strings in Resources */,
+				D3C51E8B153F8F94001F5B3B /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3C51E8E153F8F94001F5B3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3C51E9D153F8F94001F5B3B /* InfoPlist.strings in Resources */,
+				D3941847155B49D6007D68BB /* sample_icecast_status_output.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D3C51E8F153F8F94001F5B3B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3C51E6C153F8F94001F5B3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3C51E81153F8F94001F5B3B /* main.m in Sources */,
+				D3C51E85153F8F94001F5B3B /* AppDelegate.m in Sources */,
+				D3C51E88153F8F94001F5B3B /* ViewController.m in Sources */,
+				D3C51EB8153F90B5001F5B3B /* IcecastServer.m in Sources */,
+				D3C51EBA153F90B5001F5B3B /* IcecastStream.m in Sources */,
+				D3C51EBC153F90B5001F5B3B /* NetworkingUtils.m in Sources */,
+				D3B4482915463F3600958377 /* IcecastStatusParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3C51E8C153F8F94001F5B3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3C51EA0153F8F94001F5B3B /* IcecastStatusTests.m in Sources */,
+				D3C51EB9153F90B5001F5B3B /* IcecastServer.m in Sources */,
+				D3C51EBB153F90B5001F5B3B /* IcecastStream.m in Sources */,
+				D3C51EBD153F90B5001F5B3B /* NetworkingUtils.m in Sources */,
+				D3B4482A15463F3600958377 /* IcecastStatusParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3C51E97153F8F94001F5B3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3C51E6F153F8F94001F5B3B /* IcecastStatus */;
+			targetProxy = D3C51E96153F8F94001F5B3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3C51E7D153F8F94001F5B3B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3C51E7E153F8F94001F5B3B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D3C51E89153F8F94001F5B3B /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3C51E8A153F8F94001F5B3B /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		D3C51E9B153F8F94001F5B3B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3C51E9C153F8F94001F5B3B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3C51EA1153F8F94001F5B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D3C51EA2153F8F94001F5B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3C51EA4153F8F94001F5B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IcecastStatus/IcecastStatus-Prefix.pch";
+				INFOPLIST_FILE = "IcecastStatus/IcecastStatus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D3C51EA5153F8F94001F5B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IcecastStatus/IcecastStatus-Prefix.pch";
+				INFOPLIST_FILE = "IcecastStatus/IcecastStatus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D3C51EA7153F8F94001F5B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IcecastStatus.app/IcecastStatus";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IcecastStatus/IcecastStatus-Prefix.pch";
+				INFOPLIST_FILE = "IcecastStatusTests/IcecastStatusTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D3C51EA8153F8F94001F5B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IcecastStatus.app/IcecastStatus";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IcecastStatus/IcecastStatus-Prefix.pch";
+				INFOPLIST_FILE = "IcecastStatusTests/IcecastStatusTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3C51E6A153F8F93001F5B3B /* Build configuration list for PBXProject "IcecastStatus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3C51EA1153F8F94001F5B3B /* Debug */,
+				D3C51EA2153F8F94001F5B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3C51EA3153F8F94001F5B3B /* Build configuration list for PBXNativeTarget "IcecastStatus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3C51EA4153F8F94001F5B3B /* Debug */,
+				D3C51EA5153F8F94001F5B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3C51EA6153F8F94001F5B3B /* Build configuration list for PBXNativeTarget "IcecastStatusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3C51EA7153F8F94001F5B3B /* Debug */,
+				D3C51EA8153F8F94001F5B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3C51E67153F8F93001F5B3B /* Project object */;
+}
