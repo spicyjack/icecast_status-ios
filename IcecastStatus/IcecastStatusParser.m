@@ -64,7 +64,7 @@ enum ParserState { xmlParse, xmlSkip };
 - (NSMutableArray *) doParseIcecastStatus:(NSString *)icecastStatus
 {
     NSMutableArray *mountPoints = [[NSMutableArray alloc] init];
-    
+    // FIXME split the icecastStatus message into individual lines, then parse
     return mountPoints;
 }
 
