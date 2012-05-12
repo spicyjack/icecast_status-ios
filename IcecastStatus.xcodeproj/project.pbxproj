@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D324A9A9155E464C006A00F6 /* IcecastStatus_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D324A9A8155E464C006A00F6 /* IcecastStatus_Tests.m */; };
 		D3941831155B4351007D68BB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B448201544E7FA00958377 /* SystemConfiguration.framework */; };
 		D3941847155B49D6007D68BB /* sample_icecast_status_output.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3941846155B49D6007D68BB /* sample_icecast_status_output.txt */; };
 		D3B448211544E7FA00958377 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B448201544E7FA00958377 /* SystemConfiguration.framework */; };
@@ -24,7 +25,6 @@
 		D3C51E94153F8F94001F5B3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C51E74153F8F94001F5B3B /* UIKit.framework */; };
 		D3C51E95153F8F94001F5B3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C51E76153F8F94001F5B3B /* Foundation.framework */; };
 		D3C51E9D153F8F94001F5B3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3C51E9B153F8F94001F5B3B /* InfoPlist.strings */; };
-		D3C51EA0153F8F94001F5B3B /* IcecastStatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51E9F153F8F94001F5B3B /* IcecastStatusTests.m */; };
 		D3C51EB8153F90B5001F5B3B /* IcecastServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB3153F90B5001F5B3B /* IcecastServer.m */; };
 		D3C51EB9153F90B5001F5B3B /* IcecastServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB3153F90B5001F5B3B /* IcecastServer.m */; };
 		D3C51EBA153F90B5001F5B3B /* IcecastStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB5153F90B5001F5B3B /* IcecastStream.m */; };
@@ -39,16 +39,18 @@
 			containerPortal = D3C51E67153F8F93001F5B3B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D3C51E6F153F8F94001F5B3B;
-			remoteInfo = "IcecastStatus";
+			remoteInfo = IcecastStatus;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D324A9A7155E464C006A00F6 /* IcecastStatus_Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastStatus_Tests.h; sourceTree = "<group>"; };
+		D324A9A8155E464C006A00F6 /* IcecastStatus_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastStatus_Tests.m; sourceTree = "<group>"; };
 		D3941846155B49D6007D68BB /* sample_icecast_status_output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_icecast_status_output.txt; sourceTree = "<group>"; };
 		D3B448201544E7FA00958377 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D3B4482715463F3600958377 /* IcecastStatusParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastStatusParser.h; sourceTree = "<group>"; };
 		D3B4482815463F3600958377 /* IcecastStatusParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastStatusParser.m; sourceTree = "<group>"; };
-		D3C51E70153F8F94001F5B3B /* IcecastStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IcecastStatus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C51E70153F8F94001F5B3B /* IcecastStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IcecastStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C51E74153F8F94001F5B3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D3C51E76153F8F94001F5B3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D3C51E78153F8F94001F5B3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,12 +63,10 @@
 		D3C51E86153F8F94001F5B3B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D3C51E87153F8F94001F5B3B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D3C51E8A153F8F94001F5B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		D3C51E91153F8F94001F5B3B /* IcecastStatusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IcecastStatusTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C51E91153F8F94001F5B3B /* IcecastStatusTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IcecastStatusTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C51E92153F8F94001F5B3B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D3C51E9A153F8F94001F5B3B /* IcecastStatusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IcecastStatusTests-Info.plist"; sourceTree = "<group>"; };
 		D3C51E9C153F8F94001F5B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D3C51E9E153F8F94001F5B3B /* IcecastStatusTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IcecastStatusTests.h; sourceTree = "<group>"; };
-		D3C51E9F153F8F94001F5B3B /* IcecastStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IcecastStatusTests.m; sourceTree = "<group>"; };
 		D3C51EB2153F90B5001F5B3B /* IcecastServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastServer.h; sourceTree = "<group>"; };
 		D3C51EB3153F90B5001F5B3B /* IcecastServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastServer.m; sourceTree = "<group>"; };
 		D3C51EB4153F90B5001F5B3B /* IcecastStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastStream.h; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				D3B4482815463F3600958377 /* IcecastStatusParser.m */,
 				D3C51E7B153F8F94001F5B3B /* Supporting Files */,
 			);
-			path = "IcecastStatus";
+			path = IcecastStatus;
 			sourceTree = "<group>";
 		};
 		D3C51E7B153F8F94001F5B3B /* Supporting Files */ = {
@@ -167,12 +167,12 @@
 		D3C51E98153F8F94001F5B3B /* IcecastStatusTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3C51E9E153F8F94001F5B3B /* IcecastStatusTests.h */,
-				D3C51E9F153F8F94001F5B3B /* IcecastStatusTests.m */,
+				D324A9A7155E464C006A00F6 /* IcecastStatus_Tests.h */,
+				D324A9A8155E464C006A00F6 /* IcecastStatus_Tests.m */,
 				D3C51E99153F8F94001F5B3B /* Supporting Files */,
 				D3941846155B49D6007D68BB /* sample_icecast_status_output.txt */,
 			);
-			path = "IcecastStatusTests";
+			path = IcecastStatusTests;
 			sourceTree = "<group>";
 		};
 		D3C51E99153F8F94001F5B3B /* Supporting Files */ = {
@@ -199,8 +199,8 @@
 			);
 			dependencies = (
 			);
-			name = "IcecastStatus";
-			productName = "IcecastStatus";
+			name = IcecastStatus;
+			productName = IcecastStatus;
 			productReference = D3C51E70153F8F94001F5B3B /* IcecastStatus.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -218,8 +218,8 @@
 			dependencies = (
 				D3C51E97153F8F94001F5B3B /* PBXTargetDependency */,
 			);
-			name = "IcecastStatusTests";
-			productName = "IcecastStatusTests";
+			name = IcecastStatusTests;
+			productName = IcecastStatusTests;
 			productReference = D3C51E91153F8F94001F5B3B /* IcecastStatusTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
@@ -306,11 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3C51EA0153F8F94001F5B3B /* IcecastStatusTests.m in Sources */,
 				D3C51EB9153F90B5001F5B3B /* IcecastServer.m in Sources */,
 				D3C51EBB153F90B5001F5B3B /* IcecastStream.m in Sources */,
 				D3C51EBD153F90B5001F5B3B /* NetworkingUtils.m in Sources */,
 				D3B4482A15463F3600958377 /* IcecastStatusParser.m in Sources */,
+				D324A9A9155E464C006A00F6 /* IcecastStatus_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

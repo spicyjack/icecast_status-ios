@@ -8,6 +8,7 @@
 
 #import "IcecastStatus_Tests.h"
 #import "IcecastStatusParser.h"
+#import "IcecastStream.h"
 
 @implementation IcecastStatus_Tests
 
@@ -25,9 +26,24 @@
     [super tearDown];
 }
 
-- (void)testExample
+/* FIXME
+ - Split doFetchAndParseIcecastStatusPage into two different methods so you
+ can test it better
+ - Rename IcecastStream to IcecastMount
+*/
+
+- (void)testDoParseIcecastStatus
 {
-    STFail(@"Unit tests are not implemented yet in IcecastStatusTests");
+    NSMutableArray *statusArray = [[NSMutableArray alloc] init];
+    NSString *statusMsg = [[NSString alloc] init];
+    IcecastStatusParser *parser = [[IcecastStatusParser alloc] init];
+    statusArray = [parser doParseIcecastStatus:statusMsg];
+    STAssertTrue([statusArray isMemberOfClass:[NSMutableArray class]],
+                 @"doParseIcecastStatus returned array of IcecastStatus objects");
+    for (IcecastStream *stream in statusArray) {
+        STAssertTrue([stream isMemberOfClass:[IcecastStream class]],
+                     @"Member of IcecastStatus array is an IcecastStream object");
+    }
 }
 
 @end

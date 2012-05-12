@@ -29,7 +29,7 @@ enum ParserState { xmlParse, xmlSkip };
 */
 
 // launch the status page downloader/HTML parser in it's own thread
-- (void) fetchAndParseIcecastStatusPage:(id)sender withURL:(NSURL *) url
+- (void) doFetchAndParseIcecastStatusHTML:(id)sender withURL:(NSURL *) url
 {
     NSLog(@"parseIcecastServerStatus, saving appDelegate object...");
     appDelegate = sender;
@@ -55,14 +55,13 @@ enum ParserState { xmlParse, xmlSkip };
 }
 
 /*
-
  Icecast status page is formatted as follows:
  - First line format: Field name: field value
- - Subseqent lines are formatted as: value|value|value|etc.; (semicolon ends that mount)
- 
+ - Subseqent lines are formatted as: value|value|value|etc.
+ - Semicolon ends signals the end of the info for that mount
 */
 
-- (NSMutableArray *) doIcecastStatusParse:(NSString *)icecastStatus
+- (NSMutableArray *) doParseIcecastStatus:(NSString *)icecastStatus
 {
     NSMutableArray *mountPoints = [[NSMutableArray alloc] init];
     
