@@ -74,6 +74,7 @@ enum ParserState { xmlParse, xmlSkip };
  ===============
  - Methods used to trigger an action in the AppDelegate object
 */
+#pragma mark Trigger Methods
 
 -(void)triggerDisableNetworkBusyIcon:(id)object
 {
@@ -99,14 +100,8 @@ enum ParserState { xmlParse, xmlSkip };
     [appDelegate updateGUI:msg];
 }
 
-/*
- ================
- INTERNAL METHODS
- ================
- methods only meant to be called by different copies of this object
- running in different threads
-*/
- 
+#pragma mark NSXMLParser Dispatch Callbacks
+
 // parsing error occured; notify the GUI running in the main thread
 -(void)parser:(NSXMLParser *)aParser parseErrorOccurred:(NSError *)parseError
 {
