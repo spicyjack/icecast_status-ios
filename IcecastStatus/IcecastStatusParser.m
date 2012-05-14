@@ -21,15 +21,11 @@ enum ParserState { xmlParse, xmlSkip };
     id appDelegate;
 }
 
-/*
- ==============
- PUBLIC METHODS
- ==============
- methods meant to be used directly by the AppDelegate 
-*/
+// ==== Public Methods ====
+#pragma mark Public Methods
 
 // launch the status page downloader/HTML parser in it's own thread
-- (void) doFetchAndParseIcecastStatusHTML:(id)sender withURL:(NSURL *) url
+- (void) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
 {
     NSLog(@"parseIcecastServerStatus, saving appDelegate object...");
     appDelegate = sender;
@@ -68,12 +64,8 @@ enum ParserState { xmlParse, xmlSkip };
     return mountPoints;
 }
 
-/*
- ===============
- TRIGGER METHODS
- ===============
- - Methods used to trigger an action in the AppDelegate object
-*/
+// ==== Trigger Methods ====
+#pragma mark Trigger Methods - methods triggered by other objects/threads
 
 -(void)triggerDisableNetworkBusyIcon:(id)object
 {
@@ -99,13 +91,8 @@ enum ParserState { xmlParse, xmlSkip };
     [appDelegate updateGUI:msg];
 }
 
-/*
- ================
- INTERNAL METHODS
- ================
- methods only meant to be called by different copies of this object
- running in different threads
-*/
+// ==== NSXMLParserDelegate callbacks ====
+#pragma mark NSXMLParserDelegate callbacks
  
 // parsing error occured; notify the GUI running in the main thread
 -(void)parser:(NSXMLParser *)aParser parseErrorOccurred:(NSError *)parseError
