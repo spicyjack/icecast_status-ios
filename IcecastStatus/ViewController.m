@@ -53,9 +53,10 @@ NSString *defaultURLString = @"http://stream.xaoc.org:7767/simple.xsl";
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-
 // DISPATCH METHODS
 // these will be used by the parser thread
+#pragma mark Dispatch Methods
+
 
 // update the GUI; display the videos by calling the 'description' message
 -(void) displayErrorMsg:(id) sender
@@ -85,6 +86,8 @@ NSString *defaultURLString = @"http://stream.xaoc.org:7767/simple.xsl";
 
 // the XML parser, which will be started in it's own thread
 // since no URL was supplied, use the default
+#pragma mark XML Parsing
+
 -(void)callXMLParser
 {
     NSURL *defaultURL = [[NSURL alloc] initWithString:defaultURLString];

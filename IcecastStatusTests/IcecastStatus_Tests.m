@@ -17,6 +17,9 @@
     [super setUp];
     
     // Set-up code here.
+    // FIXME add calls to NSBundle to retrieve Icecast HTML status, and 
+    // Icecast plaintext status (sample_icecast_status_output.txt)
+    // See D51Tab for NSBundle usage
 }
 
 - (void)tearDown

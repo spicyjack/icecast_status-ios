@@ -22,7 +22,7 @@ enum ParserState { xmlParse, xmlSkip };
     NSMutableData *rawXMLData;
 }
 
-// ==== Public Methods ====
+// #### Public Methods ####
 #pragma mark Public Methods
 
 // launch the status page downloader/HTML parser in it's own thread
@@ -95,11 +95,11 @@ enum ParserState { xmlParse, xmlSkip };
 - (NSMutableArray *) doParseIcecastStatus:(NSString *)icecastStatus
 {
     NSMutableArray *mountPoints = [[NSMutableArray alloc] init];
-    
+    // FIXME split the icecastStatus message into individual lines, then parse
     return mountPoints;
 }
 
-// ==== Trigger Methods ====
+// #### Trigger Methods ####
 #pragma mark Trigger Methods - methods triggered by other objects/threads
 
 -(void)triggerDisableNetworkBusyIcon:(id)object
@@ -126,7 +126,7 @@ enum ParserState { xmlParse, xmlSkip };
     [appDelegate updateGUI:msg];
 }
 
-// ==== NSXMLParserDelegate callbacks ====
+// #### NSXMLParserDelegate callbacks ####
 #pragma mark NSXMLParserDelegate callbacks
  
 // parsing error occured; notify the GUI running in the main thread
