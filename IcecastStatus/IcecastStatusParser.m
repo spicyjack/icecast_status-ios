@@ -19,35 +19,70 @@ enum ParserState { xmlParse, xmlSkip };
     NSString *parsedText;
     NSXMLParser *xmlParser;
     id appDelegate;
+    NSMutableData *rawXMLData;
 }
 
 // ==== Public Methods ====
 #pragma mark Public Methods
 
 // launch the status page downloader/HTML parser in it's own thread
-- (void) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
+- (NSData *) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
 {
-    NSLog(@"parseIcecastServerStatus, saving appDelegate object...");
+    NSString *fetchedHTML = [[NSString alloc] init];
+    NSLog(@"%@, saving appDelegate object...", __FUNCTION__);
     appDelegate = sender;
     [self triggerEnableNetworkBusyIcon:self];
-    [self performSelectorInBackground:@selector(doXMLParsing:)
+    [self performSelectorInBackground:@selector(doXMLFetchinginThread:)
                            withObject:url];
     // FIXME create a parser class with the XML parser and the status parser in one object
     // then instantiate the XML parser in the below invocation operation
     //NSInvocationOperation * genOp = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(generateKeyPairOperation) object:nil];
+    return fetchedHTML;
 }
 
-// the threaded status page downloader/HTML parser
--(void) doXMLParsing:(NSURL *)url
+// launch the status page downloader/HTML parser in it's own thread
+- (NSString *) doParseIcecastStatusHTML:(id)sender withData:(NSData *) data
 {
+    NSString *parsedHTML = [[NSString alloc] init];
+    NSLog(@"parseIcecastServerStatus, saving appDelegate object...");
+    appDelegate = sender;
+    [self triggerEnableNetworkBusyIcon:self];
+    [self performSelectorInBackground:@selector(doXMLParsingInThread:)
+                           withObject:data];
+    return parsedHTML;
+}
+
+#pragma mark Methods run in separate threads
+
+// the threaded status page downloader/HTML parser
+-(NSString *) doXMLFetchInThread:(id)sender withURL:(NSURL *)url
+{
+    NSString *parsedHTML = [[NSString alloc] init];
     // create a parser that reads from the URL object; this can block, which 
     // is why it's in it's own thread
-    NSLog(@"doXMLParsing");
-    xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    NSLog(@"doXMLParsingInThread");
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     // set the delegate class to this (self) class
     [xmlParser setDelegate:self];
     // blocking call
     [xmlParser parse];
+    return parsedHTML;
+}
+
+
+// the threaded status page downloader/HTML parser
+-(NSString *) doXMLParsingInThread:(NSData *)data
+{
+    NSString *parsedHTML = [[NSString alloc] init];
+    // create a parser that reads from the URL object; this can block, which 
+    // is why it's in it's own thread
+    NSLog(@"doXMLParsingInThread");
+    xmlParser = [[NSXMLParser alloc] initWithData:data];
+    // set the delegate class to this (self) class
+    [xmlParser setDelegate:self];
+    // blocking call
+    [xmlParser parse];
+    return parsedHTML;
 }
 
 /*
