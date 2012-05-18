@@ -41,11 +41,13 @@
     NSString *statusMsg = [[NSString alloc] init];
     IcecastStatusParser *parser = [[IcecastStatusParser alloc] init];
     statusArray = [parser doParseIcecastStatus:statusMsg];
-    STAssertTrue([statusArray isMemberOfClass:[NSMutableArray class]],
-                 @"doParseIcecastStatus returned array of IcecastStatus objects");
-    for (IcecastStream *stream in statusArray) {
-        STAssertTrue([stream isMemberOfClass:[IcecastStream class]],
-                     @"Member of IcecastStatus array is an IcecastStream object");
+    NSMutableArray *streamArray = [parser doParseIcecastStatus:statusMsg];
+    STAssertTrue([streamArray isKindOfClass:[NSMutableArray class]], 
+                 @"doParseIcecastStatus did not return an NSMutableArray");
+    for (IcecastStream *stream in streamArray) {
+        STAssertTrue([stream isKindOfClass:[IcecastStream class]], 
+                     @"doParseIcecastStatus did not return an IcecastStream object"
+                     @"invalid object returned is: %@", [stream description]);
     }
 }
 

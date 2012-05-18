@@ -26,7 +26,7 @@ enum ParserState { xmlParse, xmlSkip };
 #pragma mark Public Methods
 
 // launch the status page downloader/HTML parser in it's own thread
-- (NSData *) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
+- (NSString *) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
 {
     NSString *fetchedHTML = [[NSString alloc] init];
     NSLog(@"%@, saving appDelegate object...", __FUNCTION__);
@@ -57,11 +57,13 @@ enum ParserState { xmlParse, xmlSkip };
 // the threaded status page downloader/HTML parser
 -(NSString *) doXMLFetchInThread:(id)sender withURL:(NSURL *)url
 {
-    NSString *parsedHTML = [[NSString alloc] init];
+    NSLog(@"doXMLFetchInThread");
+    NSError *error;
+    NSString *parsedHTML = [[NSString alloc] initWithContentsOfURL:url
+                                                          encoding:NSUTF8StringEncoding
+                                                             error:&error];
     // create a parser that reads from the URL object; this can block, which 
     // is why it's in it's own thread
-    NSLog(@"doXMLParsingInThread");
-    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     // set the delegate class to this (self) class
     [xmlParser setDelegate:self];
     // blocking call
