@@ -27,8 +27,8 @@
 		D3C51E9D153F8F94001F5B3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3C51E9B153F8F94001F5B3B /* InfoPlist.strings */; };
 		D3C51EB8153F90B5001F5B3B /* IcecastServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB3153F90B5001F5B3B /* IcecastServer.m */; };
 		D3C51EB9153F90B5001F5B3B /* IcecastServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB3153F90B5001F5B3B /* IcecastServer.m */; };
-		D3C51EBA153F90B5001F5B3B /* IcecastStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB5153F90B5001F5B3B /* IcecastStream.m */; };
-		D3C51EBB153F90B5001F5B3B /* IcecastStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB5153F90B5001F5B3B /* IcecastStream.m */; };
+		D3C51EBA153F90B5001F5B3B /* IcecastMount.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB5153F90B5001F5B3B /* IcecastMount.m */; };
+		D3C51EBB153F90B5001F5B3B /* IcecastMount.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB5153F90B5001F5B3B /* IcecastMount.m */; };
 		D3C51EBC153F90B5001F5B3B /* NetworkingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */; };
 		D3C51EBD153F90B5001F5B3B /* NetworkingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */; };
 /* End PBXBuildFile section */
@@ -69,8 +69,8 @@
 		D3C51E9C153F8F94001F5B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3C51EB2153F90B5001F5B3B /* IcecastServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastServer.h; sourceTree = "<group>"; };
 		D3C51EB3153F90B5001F5B3B /* IcecastServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastServer.m; sourceTree = "<group>"; };
-		D3C51EB4153F90B5001F5B3B /* IcecastStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastStream.h; sourceTree = "<group>"; };
-		D3C51EB5153F90B5001F5B3B /* IcecastStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastStream.m; sourceTree = "<group>"; };
+		D3C51EB4153F90B5001F5B3B /* IcecastMount.h */ = {isa = PBXFileReference; fileEncoding = 4; path = IcecastMount.h; sourceTree = "<group>"; };
+		D3C51EB5153F90B5001F5B3B /* IcecastMount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastMount.m; sourceTree = "<group>"; };
 		D3C51EB6153F90B5001F5B3B /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
 		D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,8 +137,8 @@
 			children = (
 				D3C51EB2153F90B5001F5B3B /* IcecastServer.h */,
 				D3C51EB3153F90B5001F5B3B /* IcecastServer.m */,
-				D3C51EB4153F90B5001F5B3B /* IcecastStream.h */,
-				D3C51EB5153F90B5001F5B3B /* IcecastStream.m */,
+				D3C51EB4153F90B5001F5B3B /* IcecastMount.h */,
+				D3C51EB5153F90B5001F5B3B /* IcecastMount.m */,
 				D3C51EB6153F90B5001F5B3B /* NetworkingUtils.h */,
 				D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */,
 				D3C51E83153F8F94001F5B3B /* AppDelegate.h */,
@@ -296,7 +296,7 @@
 				D3C51E85153F8F94001F5B3B /* AppDelegate.m in Sources */,
 				D3C51E88153F8F94001F5B3B /* ViewController.m in Sources */,
 				D3C51EB8153F90B5001F5B3B /* IcecastServer.m in Sources */,
-				D3C51EBA153F90B5001F5B3B /* IcecastStream.m in Sources */,
+				D3C51EBA153F90B5001F5B3B /* IcecastMount.m in Sources */,
 				D3C51EBC153F90B5001F5B3B /* NetworkingUtils.m in Sources */,
 				D3B4482915463F3600958377 /* IcecastStatusParser.m in Sources */,
 			);
@@ -307,7 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C51EB9153F90B5001F5B3B /* IcecastServer.m in Sources */,
-				D3C51EBB153F90B5001F5B3B /* IcecastStream.m in Sources */,
+				D3C51EBB153F90B5001F5B3B /* IcecastMount.m in Sources */,
 				D3C51EBD153F90B5001F5B3B /* NetworkingUtils.m in Sources */,
 				D3B4482A15463F3600958377 /* IcecastStatusParser.m in Sources */,
 				D324A9A9155E464C006A00F6 /* IcecastStatus_Tests.m in Sources */,

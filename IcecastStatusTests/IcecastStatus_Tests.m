@@ -8,7 +8,7 @@
 
 #import "IcecastStatus_Tests.h"
 #import "IcecastStatusParser.h"
-#import "IcecastStream.h"
+#import "IcecastMount.h"
 
 @implementation IcecastStatus_Tests
 
@@ -44,8 +44,8 @@
     NSMutableArray *streamArray = [parser doParseIcecastStatus:statusMsg];
     STAssertTrue([streamArray isKindOfClass:[NSMutableArray class]], 
                  @"doParseIcecastStatus did not return an NSMutableArray");
-    for (IcecastStream *stream in streamArray) {
-        STAssertTrue([stream isKindOfClass:[IcecastStream class]], 
+    for (IcecastMount *stream in streamArray) {
+        STAssertTrue([stream isKindOfClass:[IcecastMount class]], 
                      @"doParseIcecastStatus did not return an IcecastStream object"
                      @"invalid object returned is: %@", [stream description]);
     }
