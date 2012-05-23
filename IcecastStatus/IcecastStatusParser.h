@@ -11,10 +11,10 @@
 @interface IcecastStatusParser : NSObject <NSXMLParserDelegate>
 
 // fetches the remote status page
-- (NSData *) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url;
+- (void)doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url;
 
 // parse out the plaintext status from the HTML fetched using doFetchIcecastStatusHTML
-- (NSString *) doParseIcecastStatusHTML:(id)sender withData:(NSData *)statusHTML;
+- (void)doParseIcecastStatusHTML:(id)sender withData:(NSData *)statusHTML;
 
 // parses the plaintext status
 - (NSMutableArray *) doParseIcecastStatus:(NSString *)icecastStatus;

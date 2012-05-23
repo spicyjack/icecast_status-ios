@@ -22,13 +22,12 @@ enum ParserState { xmlParse, xmlSkip };
     NSMutableData *rawXMLData;
 }
 
-// #### Public Methods ####
-#pragma mark Public Methods
+// #### Fetching Methods ####
+#pragma mark Fetching Methods
 
 // launch the status page downloader/HTML parser in it's own thread
-- (NSString *) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
+- (void) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
 {
-    NSString *fetchedHTML = [[NSString alloc] init];
     NSLog(@"doFetchIcecastStatusHTML: Entering, saving appDelegate object...");
     appDelegate = sender;
     [self triggerEnableNetworkBusyIcon:self];
@@ -37,47 +36,42 @@ enum ParserState { xmlParse, xmlSkip };
     // FIXME create a parser class with the XML parser and the status parser in one object
     // then instantiate the XML parser in the below invocation operation
     //NSInvocationOperation * genOp = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(generateKeyPairOperation) object:nil];
-    return fetchedHTML;
+
 }
 
-// launch the status page downloader/HTML parser in it's own thread
-- (NSString *) doParseIcecastStatusHTML:(id)sender withData:(NSData *) data
-{
-    NSString *parsedHTML = [[NSString alloc] init];
-    NSLog(@"doParseIcecastStatusHTML: Entering, saving appDelegate object...");
-    appDelegate = sender;
-    [self triggerEnableNetworkBusyIcon:self];
-    [self performSelectorInBackground:@selector(doXMLParsingInThread:)
-                           withObject:data];
-    return parsedHTML;
-}
-
-#pragma mark Methods run in separate threads
-
-// the threaded status page downloader/HTML parser
--(NSString *) doXMLFetchingInThread:(id)sender withObject:(NSURL *)url
+// the threaded status page downloader
+-(void) doXMLFetchingInThread:(id)url
 {
     NSLog(@"doXMLFetchingInThread");
     NSError *error;
     NSString *parsedHTML = [[NSString alloc] initWithContentsOfURL:url
                                                           encoding:NSUTF8StringEncoding
                                                              error:&error];
-    // create a parser that reads from the URL object; this can block, which 
-    // is why it's in it's own thread
-    // set the delegate class to this (self) class
-    [xmlParser setDelegate:self];
-    // blocking call
-    [xmlParser parse];
-    // FIXME this is wrong, need to create a dispatch method for this method 
-    // to call once processing is complete
-    return parsedHTML;
+    // trigger that the fetch is complete, which should trigger a request for data
+    [self performSelectorOnMainThread:@selector(triggerXMLFetchComplete:) 
+     // localize the error description
+                           withObject:parsedHTML
+                        waitUntilDone:NO];
 }
 
 
-// the threaded status page downloader/HTML parser
--(NSString *) doXMLParsingInThread:(NSData *)data
+// #### Parsing Methods ####
+#pragma mark Parsing Methods
+
+// launch the status page downloader/HTML parser in it's own thread
+- (void) doParseIcecastStatusHTML:(id)sender withData:(NSData *) data
 {
-    NSString *parsedHTML = [[NSString alloc] init];
+    NSLog(@"doParseIcecastStatusHTML: Entering, saving appDelegate object...");
+    appDelegate = sender;
+    [self triggerEnableNetworkBusyIcon:self];
+    [self performSelectorInBackground:@selector(doXMLParsingInThread:)
+                           withObject:data];
+}
+
+// the threaded status page downloader/HTML parser
+// XML parser will fire a trigger (below) when parsing is complete
+-(void)doXMLParsingInThread:(NSData *)data
+{
     // create a parser that reads from the URL object; this can block, which 
     // is why it's in it's own thread
     NSLog(@"doXMLParsingInThread");
@@ -86,7 +80,6 @@ enum ParserState { xmlParse, xmlSkip };
     [xmlParser setDelegate:self];
     // blocking call
     [xmlParser parse];
-    return parsedHTML;
 }
 
 /*
