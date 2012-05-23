@@ -29,10 +29,10 @@ enum ParserState { xmlParse, xmlSkip };
 - (NSString *) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
 {
     NSString *fetchedHTML = [[NSString alloc] init];
-    NSLog(@"%@, saving appDelegate object...", __FUNCTION__);
+    NSLog(@"doFetchIcecastStatusHTML: Entering, saving appDelegate object...");
     appDelegate = sender;
     [self triggerEnableNetworkBusyIcon:self];
-    [self performSelectorInBackground:@selector(doXMLFetchinginThread:)
+    [self performSelectorInBackground:@selector(doXMLFetchingInThread:)
                            withObject:url];
     // FIXME create a parser class with the XML parser and the status parser in one object
     // then instantiate the XML parser in the below invocation operation
@@ -44,7 +44,7 @@ enum ParserState { xmlParse, xmlSkip };
 - (NSString *) doParseIcecastStatusHTML:(id)sender withData:(NSData *) data
 {
     NSString *parsedHTML = [[NSString alloc] init];
-    NSLog(@"parseIcecastServerStatus, saving appDelegate object...");
+    NSLog(@"doParseIcecastStatusHTML: Entering, saving appDelegate object...");
     appDelegate = sender;
     [self triggerEnableNetworkBusyIcon:self];
     [self performSelectorInBackground:@selector(doXMLParsingInThread:)
@@ -55,9 +55,9 @@ enum ParserState { xmlParse, xmlSkip };
 #pragma mark Methods run in separate threads
 
 // the threaded status page downloader/HTML parser
--(NSString *) doXMLFetchInThread:(id)sender withURL:(NSURL *)url
+-(NSString *) doXMLFetchingInThread:(id)sender withObject:(NSURL *)url
 {
-    NSLog(@"doXMLFetchInThread");
+    NSLog(@"doXMLFetchingInThread");
     NSError *error;
     NSString *parsedHTML = [[NSString alloc] initWithContentsOfURL:url
                                                           encoding:NSUTF8StringEncoding
@@ -68,6 +68,8 @@ enum ParserState { xmlParse, xmlSkip };
     [xmlParser setDelegate:self];
     // blocking call
     [xmlParser parse];
+    // FIXME this is wrong, need to create a dispatch method for this method 
+    // to call once processing is complete
     return parsedHTML;
 }
 
