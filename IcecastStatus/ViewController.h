@@ -12,12 +12,27 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *statusTextView;
 
--(void) callXMLParser;
--(void) callXMLParser:(NSURL *) url;
--(void) enableNetworkBusyIcon:(id) sender;
--(void) disableNetworkBusyIcon:(id) sender;
--(void) displayErrorMsg:(NSString *) errorMsg;
--(void) updateGUI:(NSString *) msg;
+// call the XML parser built into IcecastStatusParser
+- (void) callXMLParser;
+- (void) callXMLParser:(NSURL *)url;
+
+// to be used by the parser to turn on and off the network busy icon
+- (void) enableNetworkBusyIcon:(id)sender;
+- (void) disableNetworkBusyIcon:(id)sender;
+
+// to be used by the parser to indicate an error of some sort
+- (void) displayErrorMsg:(NSString *)errorMsg;
+
+// returns some text to be put into the gui
+- (void) updateGUI:(NSString *)msg;
+
+// lets the view controller know that fetching of the status is done;
+// update a progress bar?
+- (void) fetchIcecastStatusHTMLDone:(NSString *)statusHTML;
+
+// lets the view controller know that parsing of the status is done;
+// update a progress bar?
+- (void) parseIcecastStatusHTMLDone:(NSString *)statusHTML;
 
 
 @end

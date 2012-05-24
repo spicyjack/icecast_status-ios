@@ -72,15 +72,17 @@ NSString *defaultURLString = @"http://stream.xaoc.org:7767/simple.xsl";
     statusTextView.text = [sender description];
 }
 
-// update the GUI; display the videos by calling the 'description' message
+// show the "network busy" icon
 -(void) enableNetworkBusyIcon:(id) sender
 {
+    // FIXME progress bar update
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
-// update the GUI; display the videos by calling the 'description' message
+// hide the "network busy" icon
 -(void) disableNetworkBusyIcon:(id) sender
 {
+    // FIXME progress bar update
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
@@ -95,16 +97,28 @@ NSString *defaultURLString = @"http://stream.xaoc.org:7767/simple.xsl";
 }
 
 // the XML parser, which will be started in it's own thread
--(void)callXMLParser:(NSURL *) url
+-(void)callXMLParser:(NSURL *)url
 {    
     NSLog(@"Creating IcecastStatusParser...");
     parser = [[IcecastStatusParser alloc] init];
     NSLog(@"Calling parser");
+    // FIXME: add a progress bar here that shows the progress of each step
     // call the parser with the contents of the fetcher
-    [parser doParseIcecastStatusHTML:self 
-                            withData:[parser doFetchIcecastStatusHTML:self withURL:url]];
+    [parser doFetchIcecastStatusHTML:self withURL:url];
 
 }
 
+- (void) fetchIcecastStatusHTMLDone:(NSString *)statusHTML
+{
+    // FIXME progress bar update
+    [parser doParseIcecastStatusHTML:self 
+                            withHTML:statusHTML];
+}
+
+- (void) parseIcecastStatusHTMLDone:(NSString *)statusHTML
+{
+    // FIXME progress bar update
+    // FIXME do something here; call the IcecastMount parser?
+}
 
 @end

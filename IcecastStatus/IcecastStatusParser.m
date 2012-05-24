@@ -26,7 +26,7 @@ enum ParserState { xmlParse, xmlSkip };
 #pragma mark Fetching Methods
 
 // launch the status page downloader/HTML parser in it's own thread
-- (void) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *) url
+- (void) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *)url
 {
     NSLog(@"doFetchIcecastStatusHTML: Entering, saving appDelegate object...");
     appDelegate = sender;
@@ -48,7 +48,7 @@ enum ParserState { xmlParse, xmlSkip };
                                                           encoding:NSUTF8StringEncoding
                                                              error:&error];
     // trigger that the fetch is complete, which should trigger a request for data
-    [self performSelectorOnMainThread:@selector(triggerXMLFetchComplete:) 
+    [self performSelectorOnMainThread:@selector(triggerXMLFetchDone:) 
      // localize the error description
                            withObject:parsedHTML
                         waitUntilDone:NO];
@@ -59,13 +59,13 @@ enum ParserState { xmlParse, xmlSkip };
 #pragma mark Parsing Methods
 
 // launch the status page downloader/HTML parser in it's own thread
-- (void) doParseIcecastStatusHTML:(id)sender withData:(NSData *) data
+- (void) doParseIcecastStatusHTML:(id)sender withHTML:(NSString *)statusHTML
 {
     NSLog(@"doParseIcecastStatusHTML: Entering, saving appDelegate object...");
     appDelegate = sender;
     [self triggerEnableNetworkBusyIcon:self];
     [self performSelectorInBackground:@selector(doXMLParsingInThread:)
-                           withObject:data];
+                           withObject:statusHTML];
 }
 
 // the threaded status page downloader/HTML parser
@@ -121,6 +121,12 @@ enum ParserState { xmlParse, xmlSkip };
 {
     //NSLog(@"triggerUpdateGUI: %@", msg);
     [appDelegate updateGUI:msg];
+}
+
+-(void)triggerXMLFetchDone:(NSString *)statusHTML
+{
+    //NSLog(@"triggerUpdateGUI: %@", msg);
+    [appDelegate fetchIcecastStatusHTMLDone:statusHTML];
 }
 
 // #### NSXMLParserDelegate callbacks ####
@@ -180,7 +186,7 @@ qualifiedName:(NSString *)qName
 -(void)parserDidEndDocument:(NSXMLParser *)aParser
 {
     // FIXME pass back the text in the <pre> tags
-    [self performSelectorOnMainThread:@selector(triggerUpdateGUI:) 
+    [self performSelectorOnMainThread:@selector(parseIcecastStatusHTMLDone:) 
                            withObject:parsedText 
                         waitUntilDone:NO];
 }
