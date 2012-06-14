@@ -42,16 +42,25 @@ enum ParserState { xmlParse, xmlSkip };
 // the threaded status page downloader
 -(void) doXMLFetchingInThread:(id)url
 {
-    NSLog(@"doXMLFetchingInThread");
+    NSLog(@"doXMLFetchingInThread; URL is %@", [url description]);
     NSError *error;
     NSString *parsedHTML = [[NSString alloc] initWithContentsOfURL:url
                                                           encoding:NSUTF8StringEncoding
                                                              error:&error];
     // trigger that the fetch is complete, which should trigger a request for data
-    [self performSelectorOnMainThread:@selector(triggerXMLFetchDone:) 
-     // localize the error description
-                           withObject:parsedHTML
-                        waitUntilDone:NO];
+    // TODO: better error handling here; detect if the requested file is missing (HTTP 404) for example
+    if ( error ) {
+        NSLog(@"Download error: %@", [error localizedDescription]);
+        [self performSelectorOnMainThread:@selector(triggerDisplayErrorMsg:) 
+                               withObject:[error localizedDescription]
+                            waitUntilDone:NO];
+        
+    } else {
+        NSLog(@"Received %i bytes from XML fetch", [parsedHTML length]);        
+        [self performSelectorOnMainThread:@selector(triggerXMLFetchDone:) 
+                               withObject:parsedHTML
+                            waitUntilDone:NO];
+    }
 }
 
 
@@ -74,7 +83,8 @@ enum ParserState { xmlParse, xmlSkip };
 {
     // create a parser that reads from the URL object; this can block, which 
     // is why it's in it's own thread
-    NSLog(@"doXMLParsingInThread");
+    NSLog(@"doXMLParsingInThread; received %i bytes of data", [data length]);
+
     xmlParser = [[NSXMLParser alloc] initWithData:data];
     // set the delegate class to this (self) class
     [xmlParser setDelegate:self];
