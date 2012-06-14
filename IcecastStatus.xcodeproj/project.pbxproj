@@ -31,6 +31,10 @@
 		D3C51EBB153F90B5001F5B3B /* IcecastMount.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB5153F90B5001F5B3B /* IcecastMount.m */; };
 		D3C51EBC153F90B5001F5B3B /* NetworkingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */; };
 		D3C51EBD153F90B5001F5B3B /* NetworkingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */; };
+		D3E19FA11589C00A0069D0F6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D3E19F9D1589C00A0069D0F6 /* Icon-72.png */; };
+		D3E19FA21589C00A0069D0F6 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3E19F9E1589C00A0069D0F6 /* Icon-72@2x.png */; };
+		D3E19FA31589C00A0069D0F6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D3E19F9F1589C00A0069D0F6 /* Icon.png */; };
+		D3E19FA41589C00A0069D0F6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3E19FA01589C00A0069D0F6 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,10 +73,14 @@
 		D3C51E9C153F8F94001F5B3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3C51EB2153F90B5001F5B3B /* IcecastServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastServer.h; sourceTree = "<group>"; };
 		D3C51EB3153F90B5001F5B3B /* IcecastServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastServer.m; sourceTree = "<group>"; };
-		D3C51EB4153F90B5001F5B3B /* IcecastMount.h */ = {isa = PBXFileReference; fileEncoding = 4; path = IcecastMount.h; sourceTree = "<group>"; };
+		D3C51EB4153F90B5001F5B3B /* IcecastMount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcecastMount.h; sourceTree = "<group>"; };
 		D3C51EB5153F90B5001F5B3B /* IcecastMount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcecastMount.m; sourceTree = "<group>"; };
 		D3C51EB6153F90B5001F5B3B /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
 		D3C51EB7153F90B5001F5B3B /* NetworkingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingUtils.m; sourceTree = "<group>"; };
+		D3E19F9D1589C00A0069D0F6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "images/Icon-72.png"; sourceTree = "<group>"; };
+		D3E19F9E1589C00A0069D0F6 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "images/Icon-72@2x.png"; sourceTree = "<group>"; };
+		D3E19F9F1589C00A0069D0F6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = images/Icon.png; sourceTree = "<group>"; };
+		D3E19FA01589C00A0069D0F6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "images/Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,10 @@
 		D3C51E7B153F8F94001F5B3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3E19F9D1589C00A0069D0F6 /* Icon-72.png */,
+				D3E19F9E1589C00A0069D0F6 /* Icon-72@2x.png */,
+				D3E19F9F1589C00A0069D0F6 /* Icon.png */,
+				D3E19FA01589C00A0069D0F6 /* Icon@2x.png */,
 				D3C51E7C153F8F94001F5B3B /* IcecastStatus-Info.plist */,
 				D3C51E7D153F8F94001F5B3B /* InfoPlist.strings */,
 				D3C51E80153F8F94001F5B3B /* main.m */,
@@ -257,6 +269,10 @@
 			files = (
 				D3C51E7F153F8F94001F5B3B /* InfoPlist.strings in Resources */,
 				D3C51E8B153F8F94001F5B3B /* ViewController.xib in Resources */,
+				D3E19FA11589C00A0069D0F6 /* Icon-72.png in Resources */,
+				D3E19FA21589C00A0069D0F6 /* Icon-72@2x.png in Resources */,
+				D3E19FA31589C00A0069D0F6 /* Icon.png in Resources */,
+				D3E19FA41589C00A0069D0F6 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
