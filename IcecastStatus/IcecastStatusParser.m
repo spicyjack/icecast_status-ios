@@ -79,13 +79,13 @@ enum ParserState { xmlParse, xmlSkip };
 
 // the threaded status page downloader/HTML parser
 // XML parser will fire a trigger (below) when parsing is complete
--(void)doXMLParsingInThread:(NSData *)data
+-(void)doXMLParsingInThread:(NSString *)statusHTML
 {
     // create a parser that reads from the URL object; this can block, which 
     // is why it's in it's own thread
-    NSLog(@"doXMLParsingInThread; received %i bytes of data", [data length]);
+    NSLog(@"doXMLParsingInThread; received %i bytes of data", [statusHTML length]);
 
-    xmlParser = [[NSXMLParser alloc] initWithData:data];
+    xmlParser = [[NSXMLParser alloc] initWithData:[statusHTML dataUsingEncoding:NSUTF8StringEncoding]];
     // set the delegate class to this (self) class
     [xmlParser setDelegate:self];
     // blocking call
