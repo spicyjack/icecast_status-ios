@@ -25,6 +25,11 @@ enum ParserState { xmlParse, xmlSkip };
 // #### Fetching Methods ####
 #pragma mark Fetching Methods
 
+// FIXME: create a parser class with the XML parser and the status parser in one object
+// then instantiate the XML parser in the below invocation operation
+// NSInvocationOperation * genOp = [[NSInvocationOperation alloc] initWithTarget:self 
+// selector:@selector(generateKeyPairOperation) object:nil];
+
 // launch the status page downloader/HTML parser in it's own thread
 - (void) doFetchIcecastStatusHTML:(id)sender withURL:(NSURL *)url
 {
@@ -33,11 +38,12 @@ enum ParserState { xmlParse, xmlSkip };
     [self triggerEnableNetworkBusyIcon:self];
     [self performSelectorInBackground:@selector(doXMLFetchingInThread:)
                            withObject:url];
-    // FIXME create a parser class with the XML parser and the status parser in one object
-    // then instantiate the XML parser in the below invocation operation
-    //NSInvocationOperation * genOp = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(generateKeyPairOperation) object:nil];
 
 }
+
+// TODO: add better error handling in doXMLFetchingInThread; 
+// detect if the requested file is missing (HTTP 404) for example
+// What's the Apple-blessed way of handling HTTP errors via the initWithContentsOfURL method?
 
 // the threaded status page downloader
 -(void) doXMLFetchingInThread:(id)url
@@ -48,15 +54,11 @@ enum ParserState { xmlParse, xmlSkip };
                                                           encoding:NSUTF8StringEncoding
                                                              error:&error];
     // trigger that the fetch is complete, which should trigger a request for data
-    // ### TODO ### better error handling here; 
-    // detect if the requested file is missing (HTTP 404) for example
-    // What's the Apple-blessed way of handling HTTP errors via the initWithContentsOfURL method?
     if ( error ) {
         NSLog(@"Download error: %@", [error localizedDescription]);
         [self performSelectorOnMainThread:@selector(triggerDisplayErrorMsg:) 
                                withObject:[error localizedDescription]
-                            waitUntilDone:NO];
-        
+                            waitUntilDone:NO];        
     } else {
         NSLog(@"Received %i bytes from XML fetch", [parsedHTML length]);        
         [self performSelectorOnMainThread:@selector(triggerXMLFetchDone:) 
