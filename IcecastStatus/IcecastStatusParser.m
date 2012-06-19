@@ -48,7 +48,9 @@ enum ParserState { xmlParse, xmlSkip };
                                                           encoding:NSUTF8StringEncoding
                                                              error:&error];
     // trigger that the fetch is complete, which should trigger a request for data
-    // TODO: better error handling here; detect if the requested file is missing (HTTP 404) for example
+    // ### TODO ### better error handling here; 
+    // detect if the requested file is missing (HTTP 404) for example
+    // What's the Apple-blessed way of handling HTTP errors via the initWithContentsOfURL method?
     if ( error ) {
         NSLog(@"Download error: %@", [error localizedDescription]);
         [self performSelectorOnMainThread:@selector(triggerDisplayErrorMsg:) 
